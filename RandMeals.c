@@ -123,11 +123,11 @@ int main(int argc, char *argv[]) {
 	
 	
 	while(1){
-		puts("e: Today's food");
-		puts("i: Insert a new food name");
-		puts("d: Delete a food name");
-		puts("f: Find a food name");
-		puts("l: List all food");
+		puts("e: Today's meal");
+		puts("i: Add new meal");
+		puts("d: Delete meal");
+		puts("f: Find meal");
+		puts("l: List all meal");
 		puts("q: Quit");
 			
 		scanf(" %c", &op);
@@ -152,7 +152,7 @@ int main(int argc, char *argv[]) {
 			case 'l':
 				ptr = head;
 				while(ptr != NULL){
-					printf("food: %s\n",ptr->food);
+					printf("Meal: %s\n",ptr->food);
 					puts("=============");
 					ptr = ptr->next;
 				}
@@ -160,7 +160,7 @@ int main(int argc, char *argv[]) {
 				
 			case 'd':
 				
-				puts("Food's name");
+				puts("Meal");
 				scanf("%s",&choose);
 				ptr = find_node(head,choose);
 				
@@ -172,14 +172,14 @@ int main(int argc, char *argv[]) {
 			   }
 				break;
 			case 'f':
-				puts("Food's name");
+				puts("Meal");
 				scanf("%s",&choose);
 				ptr = find_node(head,choose);
 				
 				if(ptr == NULL)
 					puts("Not found");
 				else{
-					printf("Found the member! \nFood's name : %s", ptr->food);
+					printf("Found meal! \nmeal : %s\n", ptr->food);
 				}
 				break;
 			case 'q':
@@ -195,13 +195,13 @@ int main(int argc, char *argv[]) {
 				ptr = head;
 				for (i=0;i<count;i++){
 					if (i == randnum){
-						printf("Today's food is: %s\n",ptr->food);
+						printf("Today's meal is: %s\n",ptr->food);
 					}
 					ptr = ptr->next;
 				}
 				break;
 			default:
-				puts("Wrong commend! Input again.");
+				puts("Wrong commend! Input again.\n");
 				break;
 		}
 		system("pause");
